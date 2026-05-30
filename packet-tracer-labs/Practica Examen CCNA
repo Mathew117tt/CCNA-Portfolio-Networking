@@ -5,7 +5,7 @@ Este laboratorio físico representa la culminación práctica de la certificaci�
 ### Evidencia del Montaje Físico
 *(Nota: El montaje evidencia el cableado estructurado entre la capa de acceso, distribución y core, junto con la interfaz de consola activa).*
 
-![Montaje de Topología Real](Evidence 1.jpeg)
+![image alt](Evidence_1.jpeg)
 
 ### Diseño Lógico y Roles de Dispositivos
 *   **Capa WAN / Borde:** Router Superior configurado como **ISP** simulado, proporcionando la pasarela a redes externas (Internet).
