@@ -31,68 +31,108 @@ Como estándar corporativo, se aplicó seguridad básica a todos los nodos de la
 
 
 ! Configuración global de seguridad (Ejemplo aplicado en R1)
+
 R1(config)# service password-encryption
+
 R1(config)# enable secret CiscoSecure2026!
+
 R1(config)# security passwords min-length 10
 
 ! Aseguramiento de accesos de consola y VTY (SSH)
+
 R1(config)# ip domain-name lab.cisco.com
+
 R1(config)# crypto key generate rsa modulus 2048
+
 R1(config)# username admin privilege 15 secret AdminAcceso99!
 
 R1(config)# line con 0
+
 R1(config-line)# login local
+
 R1(config-line)# exec-timeout 5 0
+
 R1(config-line)# exit
 
 R1(config)# line vty 0 4
+
 R1(config-line)# transport input ssh
+
 R1(config-line)# login local
 
 ! Exclusión de direcciones críticas y creación del Pool
+
 R1(config)# ip dhcp excluded-address 192.169.10.1 192.169.10.20
 R1(config)# ip dhcp pool LAN_HQ_10
+
 R1(dhcp-config)# network 192.169.10.0 255.255.255.0
+
 R1(dhcp-config)# default-router 192.169.10.1
+
 R1(dhcp-config)# dns-server 8.8.8.8
 
 ! Definición del tráfico interno permitido (Redes 192.169.x.x)
+
 R1(config)# access-list 1 permit 192.169.0.0 0.0.255.255
 
 ! Configuración de PAT en la interfaz de salida al ISP (ej. G0/0/1)
+
 R1(config)# ip nat inside source list 1 interface GigabitEthernet0/0/1 overload
 
+
 ! Marcado de interfaces NAT
+
 R1(config)# interface GigabitEthernet0/0/0
+
 R1(config-if)# ip nat inside
+
 R1(config-if)# exit
+
 R1(config)# interface GigabitEthernet0/0/1
+
 R1(config-if)# ip nat outside
 
+
 ! Agregación de enlaces en S2 y S3
+
 S2(config)# interface range FastEthernet 0/1 - 2
+
 S2(config-if-range)# switchport mode trunk
+
 S2(config-if-range)# channel-group 1 mode active
+
 S2(config-if-range)# exit
 
 S2(config)# interface port-channel 1
+
 S2(config-if)# description Troncal_LACP_Redundante
 
 ! Inyección de ruta por defecto hacia el ISP en R1
+
 R1(config)# ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0/1
+
 R1(config)# router ospf 10
+
 R1(config-router)# default-information originate
+
 
 ! Despliegue de OSPF en R2 (Ejemplo de Sucursal)
 R2(config)# router ospf 10
+
 R2(config-router)# router-id 2.2.2.2
+
 R2(config-router)# network 192.169.20.0 0.0.0.255 area 0
+
 R2(config-router)# network 192.169.255.252 0.0.0.3 area 0
+
 R2(config-router)# passive-interface GigabitEthernet0/0/0
+
 
 ! Procedimiento de respaldo ejecutado desde R1
 R1# copy running-config tftp:
+
 Address or name of remote host []? 192.169.10.50
+
 Destination filename [r1-confg]? R1_Backup_Examen_Final
 !!
 1024 bytes copied in 0.231 secs
