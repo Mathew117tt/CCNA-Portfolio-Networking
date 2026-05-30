@@ -5,7 +5,7 @@ Este laboratorio físico representa la culminación práctica de la certificaci�
 ### Evidencia del Montaje Físico
 *(Nota: El montaje evidencia el cableado estructurado entre la capa de acceso, distribución y core, junto con la interfaz de consola activa).*
 
-![image alt](https://github.com/Mathew117tt/CCNA-Portfolio-Networking/blob/d0cfab377f1cbf7f06d16c4aaa8ca0fc88c530c2/packet-tracer-labs/Evidence_1.jpeg)
+![image alt](https://github.com/Mathew117tt/CCNA-Portfolio-Networking/blob/8d416cc82421d74ba936fe4a682895a4dbfd997e/packet-tracer-labs/Evidence_1.jpeg)
 
 ### Diseño Lógico y Roles de Dispositivos
 *   **Capa WAN / Borde:** Router Superior configurado como **ISP** simulado, proporcionando la pasarela a redes externas (Internet).
