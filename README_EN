@@ -1,0 +1,30 @@
+# Network Engineering Portfolio - Cisco CCNA v7
+**By: Mathew Alonso Ugalde López** 
+*Software Engineering Student (Universidad San Marcos) & Networking Technician.*
+
+This repository compiles the practical evidence, network architectures, and CLI configurations developed during the full Cisco CCNA v7 certification track at the Instituto Nacional de Aprendizaje (INA). It features both advanced virtual simulations and methodologies applied in real physical hardware racks.
+
+---
+
+ Technical Core Competencies & Demonstrated Skills
+
+**Routing & Switching Architecture (Cisco CCNA v7):**
+* **Routing Protocols:** Configuration and deployment of single-area OSPFv2, Static, Floating, and Default routing.
+* **LAN/WAN Interconnection:** Inter-VLAN Routing (Router-on-a-Stick), Layer 3 Multi-layer switching, VLAN assignment, trunking links (802.1Q), and EtherChannel (LACP) aggregation.
+* **Redundancy & High Availability:** Gateway redundancy implementation using HSRP (Hot Standby Router Protocol) and loop-free topology validation via RSTP.
+* **IP Addressing:** Advanced design, subnetting, and optimization of IPv4 and IPv6 networks using VLSM.
+
+**Network Security & Essential Services:**
+* **Traffic Control:** Design and deployment of Standard and Extended Access Control Lists (ACLs) for perimeter traffic filtering.
+* **Address Translation:** Enterprise-level deployment of Dynamic NAT and PAT (NAT with Overload).
+* **Device Hardening:** Switch Port Security implementation, Layer 2 attack mitigation (DHCP Snooping), secure remote access management via encrypted SSH v2, and credential safeguarding.
+* **Infrastructure Services:** Automated IP assignment management through DHCPv4 and DHCPv6 deployment.
+
+**Network Automation & Next-Generation Fundamentals:**
+* **Network Programmability:** Core understanding of Software-Defined Networking (SDN) architectures and infrastructure controllers.
+* **Data Serialization Formats:** Parsing, analyzing, and manipulating structured data using **JSON** variables to interface with network RESTful APIs.
+* **Quality of Service:** Comprehension of QoS mechanisms for voice and video traffic prioritization in enterprise environments.
+
+**Physical Infrastructure & Maintenance Operations (Real Racks):**
+* **Cisco IOS Management:** Operating system backup, upgrade, and disaster recovery execution utilizing TFTP servers.
+* **Hardware Troubleshooting:** Device password recovery procedures via boot register modification (`confreg`), NVRAM erasure, and initial CLI diagnostics using terminal emulators (PuTTY/TeraTerm).
